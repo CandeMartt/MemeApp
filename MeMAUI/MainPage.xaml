@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeMAUI.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}"
+             Title="I love Memes!">
+
+
+    <Grid RowDefinitions="50*,.9*">
+        <CollectionView SelectedItem="{Binding CurrentMeme}" ItemsSource="{Binding Memes}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="0" HeightRequest="200" WidthRequest="200">
+                        <Image Source="{Binding url}" Aspect="Fill" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="2"
+                                 VerticalItemSpacing="5"
+                                 HorizontalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+        
+    </Grid>
+
+</ContentPage>
